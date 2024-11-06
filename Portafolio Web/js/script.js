@@ -21,7 +21,7 @@ getMovies(API_URL)
 async function getMovies(url) {
     // Realiza una solicitud a la API
     const res = await fetch(url)
-    // Convierte la respuesta en formato JSON
+        // Convierte la respuesta en formato JSON
     const data = await res.json()
 
     // Llama a `showMovies` para mostrar las películas en el contenedor principal
@@ -54,7 +54,7 @@ function showMovies(movies) {
                 ${overview}
             </div>
         `
-        
+
         // Añade el elemento de película al contenedor principal
         main.appendChild(movieEl)
     })
@@ -62,9 +62,9 @@ function showMovies(movies) {
 
 // Función para determinar la clase CSS de la calificación según el puntaje
 function getClassByRate(vote) {
-    if(vote >= 8) {
+    if (vote >= 8) {
         return 'green' // Calificación alta
-    } else if(vote >= 5) {
+    } else if (vote >= 5) {
         return 'orange' // Calificación media
     } else {
         return 'red' // Calificación baja
@@ -79,9 +79,9 @@ form.addEventListener('submit', (e) => {
     const searchTerm = search.value
 
     // Si hay un término de búsqueda, llama a `getMovies` con la URL de búsqueda
-    if(searchTerm && searchTerm !== '') {
+    if (searchTerm && searchTerm !== '') {
         getMovies(SEARCH_API + searchTerm)
-        
+
         // Limpia el campo de búsqueda después de realizar la búsqueda
         search.value = ''
     } else {
