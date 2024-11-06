@@ -1,0 +1,174 @@
+/* Importa la fuente 'Poppins' desde Google Fonts con peso 200 y 400 */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;400&display=swap');
+
+/* Define variables de color para usarlas en toda la hoja de estilos */
+:root {
+  --primary-color: #181820; /* Color primario */
+  --secondary-color: #282b46; /* Color secundario */
+}
+
+/* Aplica el box-sizing 'border-box' para incluir padding y borde en el tamaño total del elemento */
+* {
+  box-sizing: border-box;
+}
+
+/* Estilos generales para el cuerpo de la página */
+body {
+  background-color: var(--primary-color); /* Fondo con el color primario */
+  font-family: 'Poppins', sans-serif; /* Usa la fuente 'Poppins' */
+  margin: 0; /* Elimina el margen por defecto */
+}
+
+/* Estilos para el título en el formulario */
+.title {
+  font-size: 1.5rem; /* Tamaño de fuente más grande */
+  color: #fff; /* Color blanco */
+  font-weight: bold; /* Fuente en negrita */
+}
+
+/* Estilos para el formulario de búsqueda */
+#form {
+  display: flex;
+  justify-content: space-between; /* Alinea elementos a los extremos */
+  align-items: center; /* Centra elementos verticalmente */
+  width: 100%; /* Ocupa el 100% del ancho disponible */
+}
+
+/* Estilos para el encabezado de la página */
+header {
+  padding: 1rem; /* Agrega espacio alrededor del contenido */
+  background-color: var(--secondary-color); /* Fondo con el color secundario */
+}
+
+/* Estilos para el campo de búsqueda */
+.search {
+  background-color: transparent; /* Fondo transparente */
+  border: 2px solid var(--primary-color); /* Borde con el color primario */
+  border-radius: 50px; /* Borde redondeado */
+  font-family: inherit; /* Hereda la fuente */
+  font-size: 1rem; /* Tamaño de fuente */
+  padding: 0.5rem 1rem; /* Espacio interno */
+  color: #fff; /* Color de texto blanco */
+}
+
+/* Estilos para el texto de marcador en el campo de búsqueda */
+.search::placeholder {
+  color: #7378c5; /* Color del marcador */
+}
+
+/* Estilos para el campo de búsqueda cuando está enfocado */
+.search:focus {
+  outline: none; /* Elimina el contorno predeterminado */
+  background-color: var(--primary-color); /* Cambia el fondo al color primario */
+}
+
+/* Estilos para la sección principal donde se mostrarán las películas */
+main {
+  display: flex;
+  flex-wrap: wrap; /* Permite que los elementos se ajusten */
+  justify-content: center; /* Centra los elementos */
+}
+
+/* Estilos para cada tarjeta de película */
+.movie {
+  width: 300px; /* Ancho fijo */
+  margin: 1rem; /* Espacio alrededor de cada tarjeta */
+  background-color: var(--secondary-color); /* Fondo con el color secundario */
+  box-shadow: 0 4px 5px rgba(0, 0, 0, 0.2); /* Sombra de caja */
+  position: relative; /* Posicionamiento relativo */
+  overflow: hidden; /* Oculta contenido desbordado */
+  border-radius: 3px; /* Bordes redondeados */
+}
+
+/* Estilos para la imagen de la película */
+.movie img {
+  width: 100%; /* Ancho completo de la tarjeta */
+}
+
+/* Estilos para la sección de información de cada película */
+.movie-info {
+  color: #eee; /* Color del texto */
+  display: flex;
+  align-items: center; /* Centra el contenido verticalmente */
+  justify-content: space-between; /* Espacia los elementos */
+  gap: 0.2rem; /* Espacio entre los elementos */
+  padding: 0.5rem 1rem 1rem; /* Espaciado interno */
+  letter-spacing: 0.5px; /* Espaciado entre letras */
+}
+
+/* Estilos para el título de la película */
+.movie-info h3 {
+  margin-top: 0; /* Elimina el margen superior */
+}
+
+/* Estilos para la calificación en la tarjeta de película */
+.movie-info span {
+  background-color: var(--primary-color); /* Fondo con el color primario */
+  padding: 0.25rem 0.5rem; /* Espaciado interno */
+  border-radius: 3px; /* Bordes redondeados */
+  font-weight: bold; /* Texto en negrita */
+}
+
+/* Variantes de color para la calificación de acuerdo al nivel */
+.movie-info span.green {
+  color: lightgreen; /* Calificación alta */
+}
+
+.movie-info span.orange {
+  color: orange; /* Calificación media */
+}
+
+.movie-info span.red {
+  color: red; /* Calificación baja */
+}
+
+/* Estilos para la descripción emergente en la tarjeta */
+.overview {
+  background-color: #fff; /* Fondo blanco */
+  padding: 2rem; /* Espaciado interno */
+  position: absolute; /* Posicionamiento absoluto */
+  left: 0;
+  bottom: 0;
+  right: 0;
+  max-height: 100%; /* Altura máxima de 100% */
+  transform: translateY(101%); /* Desplaza fuera de la vista */
+  overflow-y: auto; /* Agrega barra de desplazamiento vertical si es necesario */
+  transition: transform 0.3s ease-in; /* Transición para el efecto deslizante */
+}
+
+/* Estilos para mostrar la descripción al pasar el cursor sobre la tarjeta */
+.movie:hover .overview {
+  transform: translateY(0); /* Desplaza la descripción para que sea visible */
+}
+
+
+/* Estilos para el footer */
+footer {
+  background-color: var(--secondary-color);
+  padding: 1rem;
+  text-align: center;
+  color: #fff;
+}
+
+footer .social-links {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+footer .social-links a {
+  display: inline-block;
+  margin: 0 0.5rem;
+  color: #fff;
+  transition: color 0.3s;
+}
+
+footer .social-links a:hover {
+  color: #7378c5;
+}
+
+footer p {
+  font-size: 0.9rem;
+  margin-top: 1rem;
+}
